@@ -1,8 +1,29 @@
+# Node modules
 backend/node_modules/
+frontend/node_modules/
 frontend_vite/node_modules/
 
-backend/uploads/
+# Build output
+frontend/dist/
+frontend_vite/dist/
+
+# Environment files
 backend/.env
+frontend/.env
 frontend_vite/.env
 
-frontend_vite/dist/
+# Uploads
+backend/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# Vercel / Deployment
+.vercel
