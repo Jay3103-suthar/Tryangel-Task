@@ -6,7 +6,23 @@ const connectDB = require('./config/db');
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_URL || '*' }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://tryangel-task.vercel.app",
+  process.env.CLIENT_URL
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS: " + origin));
+    }
+  },
+  credentials: true
+}));
+
 
 connectDB(process.env.MONGO_URI || 'mongodb://localhost:27017/tryangle');
 
