@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --sidebar-width: 260px; }
+html,body,#root { height:100%; }
+body { background: linear-gradient(180deg, #020617 0%, #071227 60%); }
+
+.card { @apply bg-panel/80 backdrop-blur-sm rounded-2xl shadow-lg p-4; }
+.btn { @apply px-3 py-2 rounded-md font-medium shadow-sm; }
+.btn-primary { @apply bg-accent text-white hover:opacity-90; }
+.btn-ghost { @apply bg-gray-800 text-gray-200 hover:bg-gray-700; }
+.table { @apply min-w-full divide-y divide-gray-700; }
